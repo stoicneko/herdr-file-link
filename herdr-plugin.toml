@@ -1,0 +1,17 @@
+id = "stoicneko.file-link"
+name = "File link opener"
+version = "0.1.0"
+min_herdr_version = "0.9.4"
+description = "Ctrl+click file:// links (e.g. file paths printed by coding agents) to open them with the Windows default app while mouse capture is on."
+platforms = ["windows"]
+
+[[actions]]
+id = "open"
+title = "Open file link"
+command = ["pwsh.exe", "-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", "open.ps1"]
+
+[[link_handlers]]
+id = "file-url"
+title = "Open with default app"
+pattern = "^file://"
+action = "open"
